@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SMM Panel Login</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      background:#e9eeff;
+      margin:0;
+    }
+    .box {
+      background:#fff;
+      width:320px;
+      padding:25px;
+      border-radius:10px;
+      box-shadow:0 0 12px rgba(0,0,0,0.15);
+      text-align:center;
+    }
+    input {
+      width:100%;
+      padding:10px;
+      margin:10px 0;
+      border:1px solid #ccc;
+      border-radius:6px;
+    }
+    button {
+      width:100%;
+      padding:10px;
+      margin-top:10px;
+      background:#007bff;
+      color:#fff;
+      border:none;
+      border-radius:6px;
+      cursor:pointer;
+      font-size:16px;
+    }
+    button:hover {
+      background:#005ecb;
+    }
+    #msg { color:red; margin-top:10px; }
+  </style>
+
+</head>
+<body>
+
+  <div class="box">
+    <h2>Login</h2>
+
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+    <p id="msg"></p>
+  </div>
+
+  <script>
+    function login(){
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if(user === "admin" && pass === "1234"){
+        window.location.href = "services.html";
+      } else {
+        document.getElementById("msg").innerText = "Wrong username or password!";
+      }
+    }
+  </script>
+
+</body>
+</html>
